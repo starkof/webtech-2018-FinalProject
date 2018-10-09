@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ensign</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $('.carousel').carousel({
+            interval: 10
+        })
+    </script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #5e47ab; margin-bottom: 10px; margin-top: 5px">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">Ensign</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="games.html">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="about.html">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-default my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-bottom: 60px">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="images/scrabble-sign-language.jpg" alt="Sign Language Scrabble" height="400">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/scrabble-normal.jpg" alt="Normal Scrabble" height="400">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <hr>
+    <div class="container-fluid" style="padding-left: 200px; padding-right: 200px; margin-top: 40px; padding-bottom: 20px">
+        <blockquote class="blockquote text-center">
+            <h3>Ensign Games</h3>
+            We seek to increase inclusivity by creating a web platform with fun sign language games that encourages hearing people to learn sign language in order to better communicate with the deaf.
+        </blockquote>
+    </div>
+    <hr>
+    <div style="margin-bottom: 80px; margin-top: 20px">
+        <h3 class="text-center">Select from Our Range of Games</h3>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-sm-4 align-content-center">
+                <a href="games.html"><img src="images/word-link.jpg" alt="Book 1" height="200px" class="rounded"></a>
+                <p>Word Link</p>
+            </div>
+            <div class="col-sm-4">
+                <a href="games.html"><img src="images/word-search.png" alt="Book 2" height="200px" class="rounded"></a>
+                <p>Word Search</p>
+            </div>
+            <div class="col-sm-4">
+                <a href="games.html"><img src="images/scrabble-thumbnail.jpg" alt="Book 3" height="200px" class="rounded"></a>
+                <p>Scrabble</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer font-small blue pt-4" style="background-color: #dcc0ff; margin-top: 30px">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-sm-12">
+                <h5 class="text-secondary" style="margin-bottom: 30px">Quick Links</h5>
+            </div>
+            <div class="col-sm-4">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">Games</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Search">
+                    <button class="btn btn-outline-default my-2 my-sm-0" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="#">Ensign</a>
+    </div>
+</footer>
+</body>
+
+</html>
