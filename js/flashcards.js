@@ -12,6 +12,10 @@ let rounds = 10;
 
 // add validation to ensure only alphabets are input
 // add sound
+// add streaks
+// timer bonuses for responding quickly
+// exaggerated numbers for scores
+// High Scores
 
 function timer(){
     time_remaining -= 1;
