@@ -9,13 +9,28 @@ let time_remaining = 10;
 let timer_id = 0;
 let next_card_delay = 800;
 let rounds = 10;
+let tutorial_delay = 3000;
 
-// add validation to ensure only alphabets are input
-// add sound
-// add streaks
-// timer bonuses for responding quickly
-// exaggerated numbers for scores
-// High Scores
+function tutorialStep(count){
+    // console.log(count);
+    showCard(alphabets[count.i]);
+    document.getElementById("arena-feedback").innerHTML = alphabets[count.i];
+    count.i += 1;
+}
+
+function runTutorial(){
+    count = {i: 0};
+    const tutorialInterval = setInterval(function(){tutorialStep(count)}, tutorial_delay, count);
+    setTimeout(function(){
+        clearInterval(tutorialInterval);
+        document.getElementById("arena-feedback").innerHTML = "";
+        document.getElementById("arena").innerHTML =
+        '<div id="arena" class="col-sm text-center" style="margin-top: 240px">' +
+            '<button type="button" onclick="runTutorial()">Tutorial</button>' +
+            '<button type="button" onclick="startGame()">Start Game</button>' +
+        '<div>';
+        }, tutorial_delay*alphabets.length + 500);
+}
 
 function timer(){
     time_remaining -= 1;
@@ -39,14 +54,20 @@ function startTimer(){
 }
 
 function startGame(){
-    showCard();
+    // runTutorial();
+    showRandomCard();
 }
 
-function showCard() {
-    const letter = randomLetter(alphabets[5]);
+function showCard(letter){
     guess_letter = letter;
     document.getElementById("arena").innerHTML = getAslLetter(letter);
     document.getElementById("arena").style = "";
+    // console.log(letter);
+}
+
+function showRandomCard() {
+    const letter = randomLetter(alphabets[5]);
+    showCard(letter);
     time_remaining = 10;
     document.getElementById("arena-timer").innerHTML = "Timer: 0:" + time_remaining.toString();
     timer_id = startTimer();
@@ -56,7 +77,7 @@ function nextCard(){
     if (rounds > 1) {
         document.getElementById("arena-feedback").innerHTML = "";
         clearTimeout(timer_id);
-        showCard();
+        showRandomCard();
         rounds -= 1;
     } else {
         document.getElementById("arena").innerHTML = "Game Over!";
@@ -83,9 +104,13 @@ function getImageFeedback(valid){
 }
 
 function keyFeedback(key){
+    if (!key.toUpperCase().match(/[A-Z]/)){
+        return;
+    }
+
     document.getElementById("arena-feedback").innerHTML = key.toUpperCase();
-    console.log(guess_letter.toUpperCase());
-    console.log(key.toUpperCase());
+    // console.log(guess_letter.toUpperCase());
+    // console.log(key.toUpperCase());
 
     const valid = guess_letter.toUpperCase() === key.toUpperCase();
     document.getElementById("arena-feedback").innerHTML += getImageFeedback(valid);
@@ -96,17 +121,3 @@ function keyFeedback(key){
         setTimeout(nextCard, next_card_delay);
     }
 }
-
-// function count(n){
-//     document.getElementById("par").innerHTML = n;
-// }
-//
-// function doCount(){
-//     for (let i = 0; i < 10; i++){
-//         setTimeout(count, 1000, i);
-//     }
-// }
-//
-// function wait(millis){
-//     setTimeout(function(){}, millis);
-// }
