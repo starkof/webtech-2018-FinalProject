@@ -1,1 +1,2 @@
-
+This is a project work of a group of students in the We
+b Technologies Class 2018 at Ashesi University. This project is to create a website to help individuals to learn sign langauge by playing of games.
