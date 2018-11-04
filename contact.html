@@ -29,7 +29,7 @@
                     <a class="nav-link text-light" href="games.html">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="contact.html">Contact</a>
+                    <a class="nav-link text-light" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="about.html">About</a>
@@ -42,11 +42,14 @@
         </div>
     </div>
 </nav>
+
+<?php require_once("form.php");  ?>
+
 <div class="container-fluid">
     <div class="form-area container">
-        <form role="form" name="contact-form">
+        <form role="form" name="contact-form"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
             <br style="clear:both">
-            <h3 style="margin-bottom: 25px; text-align: center;">Contact us or give us some feedback</h3>
+            <h3 style="margin-bottom: 25px; text-align: center;"> Contact us or give us some feedback</h3>
             <div class="form-group">
                 <label for="first-name">First Name</label>
                 <input type="text" onchange="name_validation(this.value, this.id)" class="form-control" id="first-name" name="first-name" required>
@@ -65,10 +68,11 @@
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" onchange="not_empty_validation(this.value, this.id)" type="textarea" id="message" maxlength="140" rows="7"></textarea>
+                <textarea class="form-control" onchange="not_empty_validation(this.value, this.id)" type="textarea" id="message" name="message" maxlength="140" rows="7"></textarea>
             </div>
             <button type="button" id="submit" name="submit" class="btn btn-primary pull-right" onclick="click_action()">Submit Form</button>
         </form>
+    
     </div>
 </div>
 

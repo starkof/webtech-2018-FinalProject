@@ -14,9 +14,25 @@
         })
     </script>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script> <!--//jQuery Library -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script> <!--//Validation Plugin -->
+    <script src="js/myJs.js"></script>
+   
+     <script>
+   $(document).ready(function(){ //Run this function when the page is finished loading.
+      $("#sign-up").validate({ //Get the element with the id="sign-up" and run the validation plugin on it at default settings.
+           errorPlacement: function(error, element) {
+                   error.appendTo("label[for="+$(element).attr('id')+"]");
+           },
+           errorElement: "em"
+      });
+      $('form').removeAttr('novalidate');
+   });
+   </script>
 </head>
 
 <body>
+ <?php require_once("form.php");  ?>
 <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #5e47ab; margin-bottom: 10px; margin-top: 5px">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="#">Ensign</a>
@@ -33,7 +49,7 @@
                     <a class="nav-link text-light" href="games.html">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="contact.html">Contact</a>
+                    <a class="nav-link text-light" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="about.html">About</a>
@@ -95,7 +111,7 @@
 <footer class="page-footer font-small blue pt-4" style="background-color: #dcc0ff; margin-top: 30px">
     <div class="container-fluid text-center text-md-left">
         <div class="row">
-            <div class="col-sm-12">
+           <!-- <div class="col-sm-12">
                 <h5 class="text-secondary" style="margin-bottom: 30px">Quick Links</h5>
             </div>
             <div class="col-sm-4">
@@ -120,7 +136,7 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Search">
                     <button class="btn btn-outline-default my-2 my-sm-0" type="submit">Subscribe</button>
                 </form>
-            </div>
+            </div>-->
         </div>
     </div>
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
