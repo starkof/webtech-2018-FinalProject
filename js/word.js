@@ -26,7 +26,10 @@ function startGame() {
 }
 
 function next(){
+    document.getElementById("validate").innerHTML = " ";
+    document.getElementById("word").value= "";
     getRandomWord();
+    
 }
 
 function showGifWord(word) {
