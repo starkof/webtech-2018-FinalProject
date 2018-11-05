@@ -6,6 +6,20 @@ let guess_quote = '';
 
 function startGame() {
     getRandomQuote();
+    //document.getElementById("myForm").innerHTML = "My Answer:"+;
+    var x = document.getElementById("myForm");
+    var y = document.getElementById("famousQuote");
+    var z = document.getElementById("myButton");
+    if (x.style.display === "none" &&y.style.display=== "none" && z.style.display=== "none" ){
+        x.style.display = "block";
+        y.style.display = "block";
+        z.style.display = "block";
+    } 
+    else {
+        x.style.display = "none";
+        y.style.display = "none";
+        z.style.display = "none";
+    }
 }
 
 function showSignQuote(quote) {
@@ -21,11 +35,10 @@ function getRandomQuote() {
 
 function randomQuote() {
     rand = quotes[Math.floor(Math.random() * 8)];
-    console.log(rand);
+    //console.log(rand);
     return rand;
 
 }
-
 function getInSign(quote) {
     var quoteArray = [];
 
@@ -37,13 +50,10 @@ function getInSign(quote) {
 
         else{
             quoteArray.push("<img src=\"images/asl/" + "space" + ".jpg\" height='120' alt =''>")
-        }
-        
+        }    
     }
-
     return quoteArray
 }
-
 
 function getImageFeedback(valid) {
     if (valid) {
@@ -53,15 +63,15 @@ function getImageFeedback(valid) {
     }
 }
 
-function keyFeedback(key) {
-    if (!key.toUpperCase().match(/[A-Z]/)) {
-        return;
-    }
+function keyFeedback() {
+   
+    const valid = document.getElementById("famousQuote").value.toUpperCase() == guess_quote.toUpperCase();
+    console.log(valid);
 
-    document.getElementById("arena-feedback").innerHTML = key.toUpperCase();
+    document.getElementById("validate").innerHTML = getImageFeedback(valid);
 
-    const valid = guess_quote.toUpperCase() === key.toUpperCase();
-    document.getElementById("arena-feedback").innerHTML += getImageFeedback(valid);
+
+    //console.log(getImageFeedback(valid));
 }
 
 
