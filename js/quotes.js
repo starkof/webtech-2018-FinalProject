@@ -5,18 +5,18 @@ let quotes = ["FORTUNE FAVORS THE BOLD", "WHATEVER YOU ARE BE A GOOD ONE", "GROW
 let guess_quote = '';
 
 function startGame() {
-    showRandomQuote();
+    getRandomQuote();
 }
 
-function showCards(quote) {
+function showSignQuote(quote) {
     guess_quote = quote;
-    document.getElementById("arena").innerHTML = getAsQuote(quote);
+    document.getElementById("arena").innerHTML = getInSign(quote);
     document.getElementById("arena").style = "";
 }
 
-function showRandomQuote() {
+function getRandomQuote() {
     const quote = randomQuote(quotes[5]);
-    showCards(quote);
+    showSignQuote(quote);
 }
 
 function randomQuote() {
@@ -26,7 +26,7 @@ function randomQuote() {
 
 }
 
-function getAsQuote(quote) {
+function getInSign(quote) {
     var quoteArray = [];
 
     for (var i = 0; i < quote.length; i++) {

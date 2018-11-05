@@ -1,3 +1,5 @@
+// Implementation of a wordsearch for learning sign language
+// by: Zoe Tagboto
 let grid = ["TBSPCEBOTIUOAA",
 "AIROERMOLESDSB",
 "CSBNYEOAHTTIIR",
