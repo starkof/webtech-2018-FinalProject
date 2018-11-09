@@ -86,7 +86,7 @@ function nextCard(){
 }
 
 function randomNumber(){
-    return numerals[Math.floor(Math.random() * 25)];
+    return numerals[Math.floor(Math.random() * 10)+1];
 }
 
 function getAslNum(number){
