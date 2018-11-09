@@ -1,5 +1,4 @@
 // Implementation of a guess the word game for learning sign language
-// by: Zoe Tagboto
 
 let words = ["computer","again","always","angry","balloon","bad","toilet","start","candy"]
 let guess_word = '';
